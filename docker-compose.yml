@@ -1,0 +1,11 @@
+services:
+  tensorflow-serving:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"
+    environment:
+      - MODEL_NAME=deepfake-serving
+    volumes:
+      - ./models/serving:/models/deepfake-serving
